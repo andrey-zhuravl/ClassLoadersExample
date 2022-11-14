@@ -1,4 +1,4 @@
-package org.zhuravlev.loading;
+package ru.zhuravlev.loading;
 
 public class MyClass1 implements MyInterface{
     String name;

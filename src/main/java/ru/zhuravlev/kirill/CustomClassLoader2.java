@@ -1,4 +1,4 @@
-package org.zhuravlev.kirill;
+package ru.zhuravlev.kirill;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,11 +13,11 @@ public class CustomClassLoader2 extends ClassLoader {
     @Override
     public Class findClass(String name) throws ClassNotFoundException {
         byte[] b = loadClassFromFile(name);
-        return defineClass("org.zhuravlev.loading.MyClass1", b, 0, b.length);
+        return defineClass(name, b, 0, b.length);
     }
 
     private byte[] loadClassFromFile(String fileName)  {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("../../../../build/classes/java/main/org/zhuravlev/loading/MyClass1.class");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("../../../../build/classes/java/main/ru/zhuravlev/loading/MyClass1.class");
         byte[] buffer;
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
         int nextValue = 0;
